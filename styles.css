@@ -1,10 +1,10 @@
 /* Base Variables */
 :root {
-    --primary-color: #0ea5e9; /* Light blue accent */
-    --primary-dark: #0284c7;
+    --primary-color: #10b981; /* Emerald 500 */
+    --primary-dark: #059669; /* Emerald 600 */
     --bg-dark: #0f172a; /* Slate 900 */
     --bg-darker: #020617; /* Slate 950 */
-    --bg-light: #1e293b; /* Slate 800 */
+    --bg-light: rgba(30, 41, 59, 0.4); /* Transparent Slate 800 */
     --text-main: #f8fafc; /* Slate 50 */
     --text-muted: #94a3b8; /* Slate 400 */
     --border-color: #334155; /* Slate 700 */
@@ -362,9 +362,11 @@ section {
 .personal-info {
     flex: 1;
     background-color: var(--bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -403,10 +405,12 @@ section {
 }
 
 .skill-category {
-    background-color: var(--bg-dark);
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 2.5rem 2rem;
     border-radius: 15px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
 }
 
@@ -494,9 +498,11 @@ section {
 
 .timeline-content {
     background-color: var(--bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 2rem;
     border-radius: 15px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
 }
 
@@ -551,10 +557,12 @@ section {
 }
 
 .edu-card {
-    background-color: var(--bg-dark);
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 2.5rem;
     border-radius: 15px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: var(--transition);
 }
@@ -647,9 +655,11 @@ section {
 .contact-form {
     flex: 2;
     background-color: var(--bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 3rem;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .form-group {
