@@ -108,8 +108,8 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         <h1 className="hero-greeting" id="heroName">Tan<br />Nguyen</h1>
         <div className="hero-subtitle">QA/QC Engineer<span className="cursor-block"></span></div>
         <div className="hero-buttons">
-          <a href="#" className="hero-btn primary" >HIRE ME</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); alert("Summary CV will be available soon."); }} className="hero-btn">⬇ DOWNLOAD SUMMARY CV</a>
+          <a href="#" className="hero-btn primary" onClick={(e) => { e.preventDefault(); navigate("contacts"); }}>HIRE ME</a>
+          <a href="/resume" target="_blank" className="hero-btn">⬇ DOWNLOAD SUMMARY CV</a>
         </div>
       </div>
     </div>
@@ -216,7 +216,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
               <div className="tl-desc">Networking, algorithms, operating systems, and core computer science fundamentals.</div>
             </div>
           </div>
-          <a href="#" onClick={(e) => { e.preventDefault(); alert("Summary CV will be available soon."); }} className="hero-btn" style={{ display: "inline-flex", marginTop: "16px", fontSize: "0.68rem" }}>
+          <a href="/resume" target="_blank" className="hero-btn" style={{ display: "inline-flex", marginTop: "16px", fontSize: "0.68rem" }}>
             ⬇ DOWNLOAD SUMMARY CV
           </a>
         </div>
