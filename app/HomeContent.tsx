@@ -122,25 +122,25 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       <h2 className="section-title">About_Me</h2>
       <div className="about-grid">
         <div className="about-bio">
-          <p>Hello! I'm a <strong>QA/QC Engineer & Team Leader</strong> with over <strong>10 years of experience</strong> in Information Technology, specializing in manual and automation testing.</p>
-          <p>My expertise spans <strong>Data Pipelines</strong>, Migration, SAP ERP, E-commerce, Fulfillment, and Healthcare domains. I bridge the gap between requirements and quality — ensuring high-quality product delivery.</p>
-          <p>Currently focused on <strong>Automation Testing</strong>, API Testing, and leading QA teams for enterprise clients. I have hands-on experience with AWS services, Apache Airflow, and CI/CD pipelines.</p>
-          <p>When not testing systems, I enjoy mentoring team members, optimizing test strategies, and exploring new automation tools.</p>
+          <p>Hello! I'm a <strong>Test Consultant Engineer</strong> with over <strong>10 years of experience</strong> in Information Technology, specializing in manual testing, automation testing, and QA team leadership.</p>
+          <p>Currently at <strong>Hitachi Digital Services Vietnam</strong>, working on FUJIFILM cloud platforms and laboratory automation data pipelines on AWS. Previously led QC teams at FPT Software for large-scale data migration projects.</p>
+          <p>My expertise spans <strong>Data Pipelines</strong>, Cloud (AWS, Snowflake, Redshift), SAP/ERP, E-commerce, Fulfillment, and Healthcare domains. I apply <strong>AI-driven approaches</strong> to optimize test case design and quality assurance.</p>
+          <p>Passionate about mentoring teams, building test strategies from scratch, and exploring SDET and AI Agent technologies.</p>
         </div>
         <div>
           <div className="about-info-box">
             <div className="info-row"><span className="info-label">Name</span><span className="info-value">Tan Nguyen</span></div>
             <div className="info-row"><span className="info-label">Location</span><span className="info-value">Vietnam</span></div>
             <div className="info-row"><span className="info-label">Experience</span><span className="info-value">10+ Years</span></div>
-            <div className="info-row"><span className="info-label">Speciality</span><span className="info-value">Manual & Automation Testing</span></div>
+            <div className="info-row"><span className="info-label">Speciality</span><span className="info-value">Test Consulting & QA Leadership</span></div>
             <div className="info-row"><span className="info-label">Phone</span><span className="info-value">[Protected]</span></div>
             <div className="info-row"><span className="info-label">Email</span><span className="info-value">Contact via Form</span></div>
           </div>
           <div className="about-highlight-grid">
-            <div className="highlight-box"><h4>🔍 Core Testing</h4><p>Manual testing (Web/Mobile), Test Plan, API Testing (Postman).</p></div>
-            <div className="highlight-box"><h4>🤖 Automation</h4><p>Selenium, Cucumber, TestNG, Java, JavaScript, Jenkins (CI/CD).</p></div>
-            <div className="highlight-box"><h4>💼 Leadership</h4><p>Over 4 years leading QA teams of up to 10 members.</p></div>
-            <div className="highlight-box"><h4>📊 Domains</h4><p>Data Pipeline, ERP, SAP, E-commerce, Logistics, Healthcare.</p></div>
+            <div className="highlight-box"><h4>🔍 Core Testing</h4><p>Manual (Web/Mobile), API Testing (Postman, JMeter, K6), E2E.</p></div>
+            <div className="highlight-box"><h4>🤖 Automation</h4><p>Selenium, Cucumber, TestNG, Java, Jenkins. AI-optimized test design.</p></div>
+            <div className="highlight-box"><h4>💼 Leadership</h4><p>4+ years leading QA teams up to 15 members across enterprise projects.</p></div>
+            <div className="highlight-box"><h4>☁️ Cloud & Data</h4><p>AWS, Airflow, Snowflake, Redshift, ETL/ELT pipelines, SAP BTP.</p></div>
           </div>
         </div>
       </div>
@@ -157,36 +157,43 @@ export default function HomeContent({ posts }: { posts: any[] }) {
           <div className="resume-col-title">▸ WORK EXPERIENCE</div>
           <div className="timeline">
             <div className="timeline-item">
-              <div className="tl-period">2024 — PRESENT</div>
-              <div className="tl-title">Test Consultant & QC Leader</div>
-              <div className="tl-sub">Hitachi Digital Services / FPT Software</div>
-              <div className="tl-desc">Built end-to-end QA for large-scale data pipelines (&gt;500 tables). Hands-on with AWS services and Apache Airflow. Led QC team of 10 members.</div>
+              <div className="tl-period">JAN 2026 — PRESENT</div>
+              <div className="tl-title">Test Consultant Engineer</div>
+              <div className="tl-sub">Hitachi Digital Services Vietnam</div>
+              <div className="tl-desc">FUJIFILM IWpro RM/Print — Built test strategy, wrote functional &amp; SST test cases, executed E2E scenarios. Lab Automation Platform — Data pipeline testing on AWS, delivered successful demo to client.</div>
+            </div>
+            <div className="timeline-item">
+              <div className="tl-period">MAR 2024 — JAN 2026</div>
+              <div className="tl-title">QC Leader</div>
+              <div className="tl-sub">FPT Software</div>
+              <div className="tl-desc">Data Pipeline &amp; Migration for a top Japan Airline. Led QC team of 10 for 30+ schemas, 500+ tables. Hands-on AWS, Airflow, Snowflake, Redshift. Applied AI to test optimization.</div>
             </div>
             <div className="timeline-item">
               <div className="tl-period">2023 — 2024</div>
               <div className="tl-title">QA/QC Leader</div>
-              <div className="tl-sub">Laidon Company</div>
-              <div className="tl-desc">Led QA team for SAP master data management solutions. Designed quality control procedures across 10+ customers.</div>
+              <div className="tl-sub">Laidon Company (SAP Certified Partner)</div>
+              <div className="tl-desc">SimpleMDG — SAP BTP cloud app for Master Data Governance. Led 15 QC across 10+ customers. Team of 70 members.</div>
             </div>
             <div className="timeline-item">
               <div className="tl-period">2020 — 2023</div>
               <div className="tl-title">QA/QC Leader</div>
               <div className="tl-sub">Baspro Company (Dai Viet Group)</div>
-              <div className="tl-desc">Ecosystem for e-commerce, fulfillment, logistics. Analyzed Ranorex reports, implemented Postman for API testing. Deployed solutions for 10+ customers.</div>
+              <div className="tl-desc">9 platforms (SC, FOS, DH, LMD, DMS, WMS, CRM, POS, DVGo). Deployed for 10+ customers, 6000+ orders/day. Postman API testing, K6 performance.</div>
             </div>
             <div className="timeline-item">
               <div className="tl-period">2016 — 2020</div>
               <div className="tl-title">QA/QC Engineer</div>
               <div className="tl-sub">TMA Solutions</div>
-              <div className="tl-desc">US Healthcare and Contact Management projects. API testing (Postman, JMeter). Managed Automation team (Java, Selenium, Cucumber).</div>
+              <div className="tl-desc">Vibrent Health (US Healthcare), Iron Mountain. Automation team lead (Java, Selenium). Multiple Star Performer awards.</div>
             </div>
             <div className="timeline-item">
               <div className="tl-period">2012 — 2016</div>
               <div className="tl-title">IT Support</div>
               <div className="tl-sub">VNG Corporation</div>
-              <div className="tl-desc">Supported end-users with networking, troubleshooting. Deployed GSuite, SCCM.</div>
+              <div className="tl-desc">End-user support, networking, GSuite &amp; SCCM deployment.</div>
             </div>
           </div>
+
         </div>
         <div>
           <div className="resume-col-title">▸ EDUCATION & CERTS</div>

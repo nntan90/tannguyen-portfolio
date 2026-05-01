@@ -156,7 +156,7 @@ export default function ResumePage() {
         <div className="resume-header">
           <div>
             <div className="resume-name">TAN NGUYEN</div>
-            <div className="resume-title">QA/QC Engineer & Test Leader — 10+ Years Experience</div>
+            <div className="resume-title">QA/QC Engineer & Test Consultant — 10+ Years Experience</div>
           </div>
           <div className="resume-contact">
             <a href="https://tester1000kg.vercel.app" target="_blank">tester1000kg.vercel.app</a><br />
@@ -170,9 +170,10 @@ export default function ResumePage() {
           <div className="section-title">Professional Summary</div>
           <div className="summary-text">
             QA/QC Engineer with over 10 years in IT, specializing in manual testing, automation testing, and team leadership.
-            Expertise across Data Pipelines, SAP/ERP, E-commerce, Fulfillment, and Healthcare domains.
-            Led QA teams of up to 15 members, designed comprehensive test strategies for enterprise clients,
-            and applied AI-driven approaches to optimize test coverage. Currently exploring SDET and AI Agent technologies.
+            Expertise across Data Pipelines, SAP/ERP, E-commerce, Fulfillment, Healthcare, and Cloud domains.
+            Led QA teams of up to 15 members, designed comprehensive test strategies for Fortune 500 and enterprise clients.
+            Hands-on with AWS services, Apache Airflow, Snowflake, and Amazon Redshift for cloud-based data pipeline testing.
+            Applied AI-driven approaches to optimize test case design, coverage, and efficiency.
           </div>
         </div>
 
@@ -182,15 +183,27 @@ export default function ResumePage() {
 
           <div className="job">
             <div className="job-header">
-              <div className="job-title">Test Consultant Engineer & QC Leader</div>
-              <div className="job-period">Mar 2024 — Present</div>
+              <div className="job-title">Test Consultant Engineer</div>
+              <div className="job-period">Jan 2026 — Present</div>
             </div>
-            <div className="job-company">Hitachi Digital Services / FPT Software</div>
+            <div className="job-company">Hitachi Digital Services Vietnam — Global systems integrator, subsidiary of Hitachi, Ltd.</div>
             <ul>
-              <li>Built end-to-end QA for large-scale data pipeline & migration project (30+ schemas, 500+ tables) for a top Japanese airline.</li>
+              <li><strong>FUJIFILM IWpro RM/Print</strong> — Built test strategy and proposed testing process for cloud-based print management platform. Wrote functional test cases and SST scenarios. Executed E2E testing and reported quality status.</li>
+              <li><strong>Lab Automation Platform (Demo)</strong> — Built proof-of-concept data pipeline on AWS for laboratory environment. Verified data ingestion and processing flows. Delivered successful demo resulting in project continuation.</li>
+            </ul>
+          </div>
+
+          <div className="job">
+            <div className="job-header">
+              <div className="job-title">QC Leader</div>
+              <div className="job-period">Mar 2024 — Jan 2026</div>
+            </div>
+            <div className="job-company">FPT Software — Leading global IT services provider for Fortune 500 clients</div>
+            <ul>
+              <li>Led QC team of 10 for data pipeline & migration project for a top Japanese airline (30+ schemas, 500+ tables).</li>
               <li>Hands-on with AWS services and Apache Airflow for ETL/ELT testing orchestration.</li>
-              <li>Led QC team of 10 members, applied AI approaches to enhance test case design and syntax review.</li>
               <li>Validated data integrity on Snowflake and Amazon Redshift across all migration stages.</li>
+              <li>Applied AI approaches to enhance test case design, viewpoints, and syntax review.</li>
             </ul>
           </div>
 
@@ -199,10 +212,10 @@ export default function ResumePage() {
               <div className="job-title">QA/QC Leader</div>
               <div className="job-period">Mar 2023 — Mar 2024</div>
             </div>
-            <div className="job-company">Laidon Company (SAP Certified Partner)</div>
+            <div className="job-company">Laidon Company — SAP Certified Partner (US, Japan, Vietnam)</div>
             <ul>
-              <li>Led QA team for SimpleMDG — SAP BTP cloud-native application for Master Data Governance.</li>
-              <li>Designed quality control procedures across 10+ customers with team of 15 QC engineers.</li>
+              <li>Led 15 QC engineers for SimpleMDG — SAP BTP cloud-native Master Data Governance application.</li>
+              <li>Designed quality control procedures across 10+ customers, reducing defects in client deliveries.</li>
             </ul>
           </div>
 
@@ -211,12 +224,11 @@ export default function ResumePage() {
               <div className="job-title">QA/QC Leader</div>
               <div className="job-period">Oct 2020 — Mar 2023</div>
             </div>
-            <div className="job-company">Baspro Company (Dai Viet Group — VNR500)</div>
+            <div className="job-company">Baspro Company — Dai Viet Group (VNR500)</div>
             <ul>
-              <li>Built ecosystem for e-commerce, fulfillment, and logistics across 9 platforms (SC, FOS, DH, LMD, DMS, WMS, CRM, POS, DVGo).</li>
+              <li>Built ecosystem across 9 platforms (SC, FOS, DH, LMD, DMS, WMS, CRM, POS, DVGo).</li>
               <li>Deployed solutions for 10+ customers; system handled 6000+ orders/day.</li>
-              <li>Implemented Postman for API automation and K6 for performance testing.</li>
-              <li>Managed QA team, mentored members, and reported to stakeholders.</li>
+              <li>Implemented Postman for API testing, K6 for performance testing, Ranorex for UI testing.</li>
             </ul>
           </div>
 
@@ -225,12 +237,12 @@ export default function ResumePage() {
               <div className="job-title">QA/QC Engineer</div>
               <div className="job-period">May 2016 — Oct 2020</div>
             </div>
-            <div className="job-company">TMA Solutions</div>
+            <div className="job-company">TMA Solutions — Largest software outsourcing company in Vietnam</div>
             <ul>
-              <li>Projects: Vibrent Health (US Healthcare), Iron Mountain, Contact Management.</li>
+              <li>Projects: Vibrent Health (US Healthcare), Iron Mountain, Moso, Shearwater, Rank Media.</li>
               <li>API Testing (Postman, JMeter), SQL database testing, Agile methodology.</li>
-              <li>Managed Automation team (Java, Selenium, Cucumber, TestNG, Jenkins).</li>
-              <li>Multiple &quot;Star Performer Team&quot; awards (2018-2019).</li>
+              <li>Managed Automation team of 3 (Java, Selenium, Cucumber, TestNG, Jenkins).</li>
+              <li>Multiple &quot;Star Performer Team&quot; awards (Q2-2018, Q3-2018, Q2-2019).</li>
             </ul>
           </div>
 
@@ -239,7 +251,7 @@ export default function ResumePage() {
               <div className="job-title">IT Support</div>
               <div className="job-period">Feb 2012 — Apr 2016</div>
             </div>
-            <div className="job-company">VNG Corporation</div>
+            <div className="job-company">VNG Corporation — Digital content, gaming, cloud services</div>
             <ul>
               <li>End-user support: networking, troubleshooting, GSuite and SCCM deployment.</li>
             </ul>
@@ -251,13 +263,15 @@ export default function ResumePage() {
           <div className="section-title">Technical Skills</div>
           <div className="skills-grid">
             <div className="skill-item"><span className="skill-label">Testing:</span> Manual, Automation, API, Performance, E2E</div>
-            <div className="skill-item"><span className="skill-label">Automation:</span> Selenium, Cucumber, TestNG, Maven</div>
+            <div className="skill-item"><span className="skill-label">Automation:</span> Selenium, Cucumber, TestNG, Maven, Jenkins</div>
             <div className="skill-item"><span className="skill-label">Languages:</span> Java, JavaScript</div>
             <div className="skill-item"><span className="skill-label">API Tools:</span> Postman, JMeter, K6, Swagger</div>
-            <div className="skill-item"><span className="skill-label">Databases:</span> MySQL, PostgreSQL, MongoDB, Snowflake</div>
-            <div className="skill-item"><span className="skill-label">Cloud:</span> AWS, Apache Airflow</div>
+            <div className="skill-item"><span className="skill-label">Databases:</span> MySQL, PostgreSQL, MongoDB, Snowflake, Redshift</div>
+            <div className="skill-item"><span className="skill-label">Cloud:</span> AWS, Apache Airflow, SAP BTP</div>
             <div className="skill-item"><span className="skill-label">CI/CD:</span> Jenkins, Git</div>
-            <div className="skill-item"><span className="skill-label">Management:</span> Jira, Azure DevOps, TestRail</div>
+            <div className="skill-item"><span className="skill-label">Management:</span> Jira, Azure DevOps, TestRail, Zephyr</div>
+            <div className="skill-item"><span className="skill-label">Microsoft:</span> SharePoint, Teams, Power Automate, Power BI</div>
+            <div className="skill-item"><span className="skill-label">AI:</span> Applied AI for test optimization &amp; research</div>
           </div>
         </div>
 
@@ -265,9 +279,14 @@ export default function ResumePage() {
         <div className="section">
           <div className="section-title">Education & Certifications</div>
           <div className="edu-item">
-            <div className="edu-title">Fullstack Selenium in Java</div>
+            <div className="edu-title">Fullstack Selenium in Java (Basic to Advanced)</div>
             <div className="edu-school">Automation FC</div>
             <div className="edu-year">2020</div>
+          </div>
+          <div className="edu-item">
+            <div className="edu-title">Fresher Tester Certificate</div>
+            <div className="edu-school">TVN Testing</div>
+            <div className="edu-year">2016</div>
           </div>
           <div className="edu-item">
             <div className="edu-title">CCNA & MCSA</div>
