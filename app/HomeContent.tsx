@@ -45,10 +45,10 @@ export default function HomeContent({ posts }: { posts: any[] }) {
 {/* SIDEBAR */}
 <aside className="sidebar">
   <div className="sidebar-avatar">
-    <div className="sidebar-avatar-placeholder">👤</div>
+    <img src="/avatarxyz.png" alt="Tan Nguyen" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
   </div>
   <div className="sidebar-name">Tan<br />Nguyen</div>
-  <button className="sidebar-lang" >EN <span>▾</span></button>
+  <button className="sidebar-lang" onClick={() => alert("Vietnamese version is coming soon!")}>EN <span>▾</span></button>
   <nav>
     <ul className="sidebar-nav" id="sidebarNav">
       <li><a href="#" className={activeSection === "home" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("home"); }}>Home</a></li>
@@ -70,9 +70,9 @@ export default function HomeContent({ posts }: { posts: any[] }) {
     </a>
   </div>
   <div className="sidebar-badge">
-    <div className="badge-title">QA / QC</div>
-    <div className="badge-cert">LEADER</div>
-    <div className="badge-std">AUTOMATION</div>
+    <div className="badge-title">VIBE / TESTER</div>
+    <div className="badge-cert">SDET</div>
+    <div className="badge-std">AI AGENT</div>
   </div>
   <div className="sidebar-footer">
     <a href="#">Privacy Policy</a><br />
