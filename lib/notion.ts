@@ -65,7 +65,7 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
 
   const databaseId = process.env.NOTION_DATABASE_ID;
   try {
-    const response = await notion.databases.query({
+    const response = await (notion.databases as any).query({
       database_id: databaseId,
       filter: {
         property: "Published",
@@ -105,7 +105,7 @@ export async function getPostAndMarkdown(slug: string): Promise<{ post: BlogPost
 
   try {
     const databaseId = process.env.NOTION_DATABASE_ID;
-    const response = await notion.databases.query({
+    const response = await (notion.databases as any).query({
       database_id: databaseId,
       filter: {
         property: "Slug",

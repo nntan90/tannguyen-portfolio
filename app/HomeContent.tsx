@@ -239,7 +239,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       <div className="portfolio-grid" id="portfolioGrid">
         <div className="portfolio-card featured" data-pf="ai">
           <div className="pf-card-top">AI / LLM ENGINEERING</div>
-          <div className="pf-card-img" style="background:#1a2a3a;">
+          <div className="pf-card-img" style={{ background: "#1a2a3a" }}>
             <div className="pf-img-grid"></div>
             <span>🤖</span>
           </div>
@@ -253,7 +253,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         </div>
         <div className="portfolio-card" data-pf="enterprise">
           <div className="pf-card-top">ENTERPRISE / ERP</div>
-          <div className="pf-card-img" style="background:#2a1a0a;"><div className="pf-img-grid"></div>🏢</div>
+          <div className="pf-card-img" style={{ background: "#2a1a0a" }}><div className="pf-img-grid"></div>🏢</div>
           <div className="pf-card-body">
             <div className="pf-card-title">Japanese ERP Migration</div>
             <div className="pf-card-desc">Architecture & QA for large-scale ERP migration. Full RTM, test strategy, BA documentation for Japanese manufacturing client.</div>
@@ -262,7 +262,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         </div>
         <div className="portfolio-card" data-pf="web">
           <div className="pf-card-top">WEB APPLICATION</div>
-          <div className="pf-card-img" style="background:#0a1a2a;"><div className="pf-img-grid"></div>🌐</div>
+          <div className="pf-card-img" style={{ background: "#0a1a2a" }}><div className="pf-img-grid"></div>🌐</div>
           <div className="pf-card-body">
             <div className="pf-card-title">Healthcare CRM Platform</div>
             <div className="pf-card-desc">Full-stack CRM for healthcare providers with appointment management and secure API integrations.</div>
@@ -271,7 +271,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         </div>
         <div className="portfolio-card" data-pf="ai">
           <div className="pf-card-top">AI / TESTING</div>
-          <div className="pf-card-img" style="background:#1a2a1a;"><div className="pf-img-grid"></div>🔬</div>
+          <div className="pf-card-img" style={{ background: "#1a2a1a" }}><div className="pf-img-grid"></div>🔬</div>
           <div className="pf-card-body">
             <div className="pf-card-title">Self-Healing Test Framework</div>
             <div className="pf-card-desc">AI-powered framework that auto-updates selectors when UI changes. Reduces test maintenance by 70%.</div>
@@ -280,7 +280,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         </div>
         <div className="portfolio-card" data-pf="mobile">
           <div className="pf-card-top">MOBILE APP</div>
-          <div className="pf-card-img" style="background:#2a0a2a;"><div className="pf-img-grid"></div>📱</div>
+          <div className="pf-card-img" style={{ background: "#2a0a2a" }}><div className="pf-img-grid"></div>📱</div>
           <div className="pf-card-body">
             <div className="pf-card-title">Field Operations App</div>
             <div className="pf-card-desc">Cross-platform mobile app with offline sync, GPS tracking, and real-time dashboard.</div>
@@ -333,7 +333,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       </div>
       {/* Blog cards */}
       <div className="blog-grid" id="blogGrid">
-        {posts.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()) || (p.tags && p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())))).map((post) => (
+        {posts.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()) || (p.tags && p.tags.some((t: string) => t.toLowerCase().includes(searchQuery.toLowerCase())))).map((post) => (
           <Link href={`/blog/${post.slug}`} key={post.id} style={{ textDecoration: "none" }}>
             <div className="blog-card" data-blog={post.tags?.[0]?.toLowerCase() || "other"}>
               <div className="blog-card-header cat-ai">{post.tags?.[0]?.toUpperCase() || "ARTICLE"}</div>
