@@ -54,7 +54,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       <li><a href="#" className={activeSection === "home" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("home"); }}>Home</a></li>
       <li><a href="#" className={activeSection === "about" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("about"); }}>About</a></li>
       <li><a href="#" className={activeSection === "resume" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("resume"); }}>Resume</a></li>
-      <li><a href="#" className={activeSection === "portfolio" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("portfolio"); }}>Portfolio</a></li>
+
       <li><a href="#" className={activeSection === "blog" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("blog"); }}>Blog</a></li>
       <li><a href="#" className={activeSection === "tools" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("tools"); }}>Tools</a></li>
       <li><a href="#" className={activeSection === "contacts" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("contacts"); }}>Contacts</a></li>
