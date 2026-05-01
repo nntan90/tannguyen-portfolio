@@ -7,6 +7,7 @@ import Link from "next/link";
 
 export default function HomeContent({ posts }: { posts: any[] }) {
   const [activeSection, setActiveSection] = useState("home");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = (section: string) => {
     setActiveSection(section);
@@ -24,11 +25,11 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       const current = texts[idx];
       if(!deleting) {
         charIdx++;
-        subtitle.innerHTML = current.slice(0, charIdx) + "<span className=\"cursor-block\"></span>";
+        subtitle!.innerHTML = current.slice(0, charIdx) + "<span className=\"cursor-block\"></span>";
         if(charIdx === current.length) { deleting = true; timer = setTimeout(type, 2000); return; }
       } else {
         charIdx--;
-        subtitle.innerHTML = current.slice(0, charIdx) + "<span className=\"cursor-block\"></span>";
+        subtitle!.innerHTML = current.slice(0, charIdx) + "<span className=\"cursor-block\"></span>";
         if(charIdx === 0) { deleting = false; idx = (idx + 1) % texts.length; }
       }
       timer = setTimeout(type, deleting ? 40 : 80);
@@ -50,13 +51,13 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   <button className="sidebar-lang" >EN <span>▾</span></button>
   <nav>
     <ul className="sidebar-nav" id="sidebarNav">
-      <li><a href="#" className="active" data-section="home">Home</a></li>
-      <li><a href="#" data-section="about">About</a></li>
-      <li><a href="#" data-section="resume">Resume</a></li>
-      <li><a href="#" data-section="portfolio">Portfolio</a></li>
-      <li><a href="#" data-section="blog">Blog</a></li>
-      <li><a href="#" data-section="tools">Tools</a></li>
-      <li><a href="#" data-section="contacts">Contacts</a></li>
+      <li><a href="#" className={activeSection === "home" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("home"); }}>Home</a></li>
+      <li><a href="#" className={activeSection === "about" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("about"); }}>About</a></li>
+      <li><a href="#" className={activeSection === "resume" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("resume"); }}>Resume</a></li>
+      <li><a href="#" className={activeSection === "portfolio" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("portfolio"); }}>Portfolio</a></li>
+      <li><a href="#" className={activeSection === "blog" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("blog"); }}>Blog</a></li>
+      <li><a href="#" className={activeSection === "tools" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("tools"); }}>Tools</a></li>
+      <li><a href="#" className={activeSection === "contacts" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("contacts"); }}>Contacts</a></li>
     </ul>
   </nav>
   <div className="sidebar-divider"></div>
@@ -83,7 +84,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
 <main className="main">
 
   {/* HOME */}
-  <section className="page-section active" id="section-home">
+  <section className={`page-section ${activeSection === "home" ? "active" : ""}`} id="section-home">
     <div className="hero-section">
       <div className="hero-machine">
         <div className="retro-mac">
@@ -108,14 +109,14 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         <div className="hero-subtitle">QA/QC Engineer<span className="cursor-block"></span></div>
         <div className="hero-buttons">
           <a href="#" className="hero-btn primary" >HIRE ME</a>
-          <a href="Ba%CC%89n%20sao%20cu%CC%89a%20TAN%20NGUYEN_Green%20Black%20Simple.pdf" target="_blank" className="hero-btn">⬇ DOWNLOAD CV</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); alert("Summary CV will be available soon."); }} className="hero-btn">⬇ DOWNLOAD SUMMARY CV</a>
         </div>
       </div>
     </div>
   </section>
 
   {/* ABOUT */}
-  <section className="page-section" id="section-about">
+  <section className={`page-section ${activeSection === "about" ? "active" : ""}`} id="section-about">
     <div className="about-section">
       <div className="section-header">// ABOUT</div>
       <h2 className="section-title">About_Me</h2>
@@ -129,11 +130,11 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         <div>
           <div className="about-info-box">
             <div className="info-row"><span className="info-label">Name</span><span className="info-value">Tan Nguyen</span></div>
-            <div className="info-row"><span className="info-label">Location</span><span className="info-value">District 12, HCM city</span></div>
+            <div className="info-row"><span className="info-label">Location</span><span className="info-value">Vietnam</span></div>
             <div className="info-row"><span className="info-label">Experience</span><span className="info-value">10+ Years</span></div>
             <div className="info-row"><span className="info-label">Speciality</span><span className="info-value">Manual & Automation Testing</span></div>
-            <div className="info-row"><span className="info-label">Phone</span><span className="info-value">0868-873-883</span></div>
-            <div className="info-row"><span className="info-label">Email</span><span className="info-value">nguyenngoctan1990@gmail.com</span></div>
+            <div className="info-row"><span className="info-label">Phone</span><span className="info-value">[Protected]</span></div>
+            <div className="info-row"><span className="info-label">Email</span><span className="info-value">Contact via Form</span></div>
           </div>
           <div className="about-highlight-grid">
             <div className="highlight-box"><h4>🔍 Core Testing</h4><p>Manual testing (Web/Mobile), Test Plan, API Testing (Postman).</p></div>
@@ -147,7 +148,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   </section>
 
   {/* RESUME */}
-  <section className="page-section" id="section-resume">
+  <section className={`page-section ${activeSection === "resume" ? "active" : ""}`} id="section-resume">
     <div className="resume-section">
       <div className="section-header">// RESUME</div>
       <h2 className="section-title">Experience_</h2>
@@ -215,8 +216,8 @@ export default function HomeContent({ posts }: { posts: any[] }) {
               <div className="tl-desc">Networking, algorithms, operating systems, and core computer science fundamentals.</div>
             </div>
           </div>
-          <a href="Ba%CC%89n%20sao%20cu%CC%89a%20TAN%20NGUYEN_Green%20Black%20Simple.pdf" target="_blank" className="hero-btn" style={{ display: "inline-flex", marginTop: "16px", fontSize: "0.68rem" }}>
-            ⬇ DOWNLOAD FULL CV
+          <a href="#" onClick={(e) => { e.preventDefault(); alert("Summary CV will be available soon."); }} className="hero-btn" style={{ display: "inline-flex", marginTop: "16px", fontSize: "0.68rem" }}>
+            ⬇ DOWNLOAD SUMMARY CV
           </a>
         </div>
       </div>
@@ -224,7 +225,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   </section>
 
   {/* PORTFOLIO */}
-  <section className="page-section" id="section-portfolio">
+  <section className={`page-section ${activeSection === "portfolio" ? "active" : ""}`} id="section-portfolio">
     <div className="portfolio-section">
       <div className="section-header">// PORTFOLIO</div>
       <h2 className="section-title">Projects_</h2>
@@ -291,17 +292,17 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   </section>
 
   {/* BLOG */}
-  <section className="page-section" id="section-blog">
+  <section className={`page-section ${activeSection === "blog" ? "active" : ""}`} id="section-blog">
     <div className="blog-section">
       <div className="section-header">// BLOG</div>
       <h2 className="section-title">Articles_</h2>
       {/* Newsletter */}
       <div className="newsletter-box">
         <span className="newsletter-label">Stay updated</span>
-        <div className="newsletter-form">
-          <input className="newsletter-input" type="email" placeholder="Your email..." />
-          <button className="newsletter-submit" >SUBSCRIBE</button>
-        </div>
+        <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert("Subscribed successfully! (Mock)"); }}>
+          <input className="newsletter-input" type="email" placeholder="Your email..." required />
+          <button className="newsletter-submit" type="submit">SUBSCRIBE</button>
+        </form>
         <div className="newsletter-policy">
           <input type="checkbox" id="policyCheck" />
           <label htmlFor="policyCheck">I accept the data processing for newsletter delivery. <a href="#">Privacy Policy</a></label>
@@ -318,7 +319,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       <div className="terminal-body">
         <div className="terminal-search">
           <span className="terminal-prompt">$</span>
-          <input className="terminal-search-input" placeholder="SEARCH ARTICLES..." id="blogSearch" />
+          <input className="terminal-search-input" placeholder="SEARCH ARTICLES..." id="blogSearch" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
           <span className="terminal-slash">/</span>
         </div>
       </div>
@@ -332,7 +333,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       </div>
       {/* Blog cards */}
       <div className="blog-grid" id="blogGrid">
-        {posts.map((post) => (
+        {posts.filter(p => p.title.toLowerCase().includes(searchQuery.toLowerCase()) || (p.tags && p.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())))).map((post) => (
           <Link href={`/blog/${post.slug}`} key={post.id} style={{ textDecoration: "none" }}>
             <div className="blog-card" data-blog={post.tags?.[0]?.toLowerCase() || "other"}>
               <div className="blog-card-header cat-ai">{post.tags?.[0]?.toUpperCase() || "ARTICLE"}</div>
@@ -355,7 +356,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   </section>
 
   {/* TOOLS */}
-  <section className="page-section" id="section-tools">
+  <section className={`page-section ${activeSection === "tools" ? "active" : ""}`} id="section-tools">
     <div className="tools-section">
       <div className="section-header">// TOOLS</div>
       <h2 className="section-title">My_Stack</h2>
@@ -378,7 +379,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   </section>
 
   {/* CONTACTS */}
-  <section className="page-section" id="section-contacts">
+  <section className={`page-section ${activeSection === "contacts" ? "active" : ""}`} id="section-contacts">
     <div className="contacts-section">
       <div className="section-header">// CONTACTS</div>
       <h2 className="section-title">Get_In_Touch</h2>
@@ -386,15 +387,15 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         <div>
           <div className="contact-item">
             <div className="contact-icon-box">✉</div>
-            <div><div className="contact-label">Email</div><div className="contact-value">nguyenngoctan1990@gmail.com</div></div>
+            <div><div className="contact-label">Email</div><div className="contact-value">Contact via Form</div></div>
           </div>
           <div className="contact-item">
             <div className="contact-icon-box">📍</div>
-            <div><div className="contact-label">Location</div><div className="contact-value">District 12, HCM city</div></div>
+            <div><div className="contact-label">Location</div><div className="contact-value">Vietnam</div></div>
           </div>
           <div className="contact-item">
             <div className="contact-icon-box">📞</div>
-            <div><div className="contact-label">Phone</div><div className="contact-value">0868-873-883</div></div>
+            <div><div className="contact-label">Phone</div><div className="contact-value">[Protected]</div></div>
           </div>
           <div className="contact-item">
             <div className="contact-icon-box">💼</div>
