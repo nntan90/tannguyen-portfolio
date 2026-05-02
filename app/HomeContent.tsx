@@ -9,6 +9,64 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   const [activeSection, setActiveSection] = useState("home");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Contact form state
+  const [contactForm, setContactForm] = useState({ name: "", email: "", projectType: "", message: "" });
+  const [contactStatus, setContactStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [contactMsg, setContactMsg] = useState("");
+
+  // Newsletter state
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [newsletterMsg, setNewsletterMsg] = useState("");
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setContactStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(contactForm),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setContactStatus("sent");
+        setContactMsg("Message sent successfully!");
+        setContactForm({ name: "", email: "", projectType: "", message: "" });
+      } else {
+        setContactStatus("error");
+        setContactMsg(data.error || "Failed to send.");
+      }
+    } catch {
+      setContactStatus("error");
+      setContactMsg("Network error. Please try again.");
+    }
+  };
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setNewsletterStatus("sending");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setNewsletterStatus("sent");
+        setNewsletterMsg("Subscribed!");
+        setNewsletterEmail("");
+      } else {
+        setNewsletterStatus("error");
+        setNewsletterMsg(data.error || "Failed.");
+      }
+    } catch {
+      setNewsletterStatus("error");
+      setNewsletterMsg("Network error.");
+    }
+  };
+
   const navigate = (section: string) => {
     setActiveSection(section);
     window.scrollTo(0, 0);
@@ -306,10 +364,11 @@ export default function HomeContent({ posts }: { posts: any[] }) {
       {/* Newsletter */}
       <div className="newsletter-box">
         <span className="newsletter-label">Stay updated</span>
-        <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert("Subscribed successfully! (Mock)"); }}>
-          <input className="newsletter-input" type="email" placeholder="Your email..." required />
-          <button className="newsletter-submit" type="submit">SUBSCRIBE</button>
+        <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
+          <input className="newsletter-input" type="email" placeholder="Your email..." required value={newsletterEmail} onChange={(e) => setNewsletterEmail(e.target.value)} />
+          <button className="newsletter-submit" type="submit" disabled={newsletterStatus === "sending"}>{newsletterStatus === "sending" ? "SUBSCRIBING..." : "SUBSCRIBE"}</button>
         </form>
+        {newsletterMsg && <div style={{ fontSize: "0.7rem", marginTop: "6px", color: newsletterStatus === "sent" ? "#00e676" : newsletterStatus === "error" ? "#ff5252" : "#888" }}>{newsletterMsg}</div>}
         <div className="newsletter-policy">
           <input type="checkbox" id="policyCheck" />
           <label htmlFor="policyCheck">I accept the data processing for newsletter delivery. <a href="#">Privacy Policy</a></label>
@@ -422,20 +481,20 @@ export default function HomeContent({ posts }: { posts: any[] }) {
         </div>
         <div className="contact-form-box">
           <div className="cf-title">▸ SEND A MESSAGE</div>
-          <form id="contactForm" noValidate>
+          <form id="contactForm" noValidate onSubmit={handleContactSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label className="form-label" htmlFor="fname">Name</label>
-                <input className="form-input" type="text" id="fname" placeholder="John Doe" />
+                <input className="form-input" type="text" id="fname" placeholder="John Doe" value={contactForm.name} onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} required />
               </div>
               <div className="form-group">
                 <label className="form-label" htmlFor="femail">Email</label>
-                <input className="form-input" type="email" id="femail" placeholder="john@example.com" />
+                <input className="form-input" type="email" id="femail" placeholder="john@example.com" value={contactForm.email} onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })} required />
               </div>
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="ftype">Project Type</label>
-              <select className="form-select" id="ftype">
+              <select className="form-select" id="ftype" value={contactForm.projectType} onChange={(e) => setContactForm({ ...contactForm, projectType: e.target.value })}>
                 <option value="">Select...</option>
                 <option>Automation Testing</option>
                 <option>Manual Testing</option>
@@ -446,11 +505,12 @@ export default function HomeContent({ posts }: { posts: any[] }) {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="fmsg">Message</label>
-              <textarea className="form-textarea" id="fmsg" placeholder="Tell me about your project..."></textarea>
+              <textarea className="form-textarea" id="fmsg" placeholder="Tell me about your project..." value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })} required></textarea>
             </div>
-            <button type="submit" className="form-submit">
+            {contactMsg && <div style={{ fontSize: "0.72rem", marginBottom: "10px", padding: "8px 12px", borderRadius: "4px", background: contactStatus === "sent" ? "rgba(0,230,118,0.1)" : "rgba(255,82,82,0.1)", color: contactStatus === "sent" ? "#00e676" : "#ff5252", border: `1px solid ${contactStatus === "sent" ? "rgba(0,230,118,0.3)" : "rgba(255,82,82,0.3)"}` }}>{contactMsg}</div>}
+            <button type="submit" className="form-submit" disabled={contactStatus === "sending"}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              SEND MESSAGE
+              {contactStatus === "sending" ? "SENDING..." : "SEND MESSAGE"}
             </button>
           </form>
         </div>

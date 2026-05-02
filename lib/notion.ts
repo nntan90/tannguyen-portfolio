@@ -58,6 +58,10 @@ function helloWorld() {
 > **Note**: To replace this with real data, add your Notion Integration Token and Database ID to \`.env.local\`.
 `;
 
+// ============================================================
+// BLOG FUNCTIONS
+// ============================================================
+
 export async function getPublishedPosts(): Promise<BlogPost[]> {
   if (!process.env.NOTION_TOKEN || !process.env.NOTION_DATABASE_ID) {
     return MOCK_POSTS;
@@ -134,5 +138,95 @@ export async function getPostAndMarkdown(slug: string): Promise<{ post: BlogPost
   } catch (error) {
     console.error("Error fetching Notion post details:", error);
     return { post: null, markdown: "" };
+  }
+}
+
+// ============================================================
+// CONTACT FORM — Save to Notion Contacts Database
+// ============================================================
+
+export async function saveContact(data: {
+  name: string;
+  email: string;
+  projectType: string;
+  message: string;
+}): Promise<{ success: boolean; error?: string }> {
+  const dbId = process.env.NOTION_CONTACTS_DB;
+  if (!process.env.NOTION_TOKEN || !dbId) {
+    console.warn("Contact form: Notion not configured, skipping save.");
+    return { success: false, error: "Notion not configured" };
+  }
+
+  try {
+    await (notion.pages as any).create({
+      parent: { database_id: dbId },
+      properties: {
+        Name: {
+          title: [{ text: { content: data.name } }],
+        },
+        Email: {
+          email: data.email,
+        },
+        ProjectType: {
+          select: { name: data.projectType || "Other" },
+        },
+        Message: {
+          rich_text: [{ text: { content: data.message.slice(0, 2000) } }],
+        },
+        Date: {
+          date: { start: new Date().toISOString().split("T")[0] },
+        },
+        Status: {
+          select: { name: "New" },
+        },
+      },
+    });
+    return { success: true };
+  } catch (error: any) {
+    console.error("Error saving contact:", error);
+    return { success: false, error: error.message || "Failed to save" };
+  }
+}
+
+// ============================================================
+// NEWSLETTER — Save subscriber to Notion Newsletter Database
+// ============================================================
+
+export async function saveNewsletterSubscriber(email: string): Promise<{ success: boolean; error?: string }> {
+  const dbId = process.env.NOTION_NEWSLETTER_DB;
+  if (!process.env.NOTION_TOKEN || !dbId) {
+    console.warn("Newsletter: Notion not configured, skipping save.");
+    return { success: false, error: "Notion not configured" };
+  }
+
+  try {
+    // Check for duplicate
+    const existing = await (notion.databases as any).query({
+      database_id: dbId,
+      filter: {
+        property: "Email",
+        title: { equals: email },
+      },
+    });
+
+    if (existing.results.length > 0) {
+      return { success: false, error: "Already subscribed" };
+    }
+
+    await (notion.pages as any).create({
+      parent: { database_id: dbId },
+      properties: {
+        Email: {
+          title: [{ text: { content: email } }],
+        },
+        Date: {
+          date: { start: new Date().toISOString().split("T")[0] },
+        },
+      },
+    });
+    return { success: true };
+  } catch (error: any) {
+    console.error("Error saving newsletter subscriber:", error);
+    return { success: false, error: error.message || "Failed to subscribe" };
   }
 }
