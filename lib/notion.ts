@@ -63,12 +63,18 @@ function helloWorld() {
 // ============================================================
 
 export async function getPublishedPosts(): Promise<BlogPost[]> {
+  console.log("[Notion] NOTION_TOKEN present:", !!process.env.NOTION_TOKEN);
+  console.log("[Notion] NOTION_DATABASE_ID present:", !!process.env.NOTION_DATABASE_ID);
+  console.log("[Notion] NOTION_DATABASE_ID value:", process.env.NOTION_DATABASE_ID);
+  
   if (!process.env.NOTION_TOKEN || !process.env.NOTION_DATABASE_ID) {
+    console.log("[Notion] Missing env vars, returning mock data");
     return MOCK_POSTS;
   }
 
   const databaseId = process.env.NOTION_DATABASE_ID;
   try {
+    console.log("[Notion] Querying database:", databaseId);
     const response = await (notion.databases as any).query({
       database_id: databaseId,
       filter: {
@@ -85,6 +91,8 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
       ],
     });
 
+    console.log("[Notion] Query results count:", response.results.length);
+    
     return response.results.map((page: any) => {
       return {
         id: page.id,
