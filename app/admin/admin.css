@@ -1,0 +1,518 @@
+/* ===== ADMIN PAGE STYLES ===== */
+/* Retro terminal aesthetic matching the portfolio */
+
+.admin-body {
+  font-family: 'IBM Plex Mono', monospace;
+  background: #1a1a1a;
+  color: #e8e4d8;
+  min-height: 100vh;
+}
+
+/* ===== LOGIN ===== */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+}
+.admin-login-box {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 4px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 6px 6px 0 #000;
+}
+.admin-login-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+  color: #4ade80;
+}
+.admin-login-subtitle {
+  font-size: 0.65rem;
+  color: #555;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+.admin-login-input {
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  padding: 10px 14px;
+  background: #111;
+  border: 2px solid #333;
+  border-radius: 2px;
+  color: #e8e4d8;
+  outline: none;
+  margin-bottom: 16px;
+  transition: border-color 0.15s;
+}
+.admin-login-input:focus { border-color: #4ade80; }
+.admin-login-input::placeholder { color: #444; }
+.admin-login-btn {
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px;
+  background: #4ade80;
+  color: #111;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.admin-login-btn:hover { opacity: 0.85; }
+.admin-login-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.admin-login-error {
+  font-size: 0.7rem;
+  color: #ff5252;
+  margin-top: 12px;
+  padding: 8px;
+  background: rgba(255,82,82,0.1);
+  border: 1px solid rgba(255,82,82,0.3);
+  border-radius: 2px;
+}
+
+/* ===== DASHBOARD ===== */
+.admin-dashboard { padding: 24px 32px; max-width: 1200px; margin: 0 auto; }
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #333;
+  margin-bottom: 24px;
+}
+.admin-header-left { display: flex; align-items: center; gap: 16px; }
+.admin-header-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #4ade80;
+}
+.admin-header-back {
+  font-size: 0.65rem;
+  color: #555;
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 4px 10px;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+.admin-header-back:hover { color: #e8e4d8; border-color: #555; }
+.admin-logout-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  background: transparent;
+  color: #ff5252;
+  border: 1px solid #ff5252;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.admin-logout-btn:hover { background: #ff5252; color: #111; }
+
+/* Stats */
+.admin-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.admin-stat {
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 14px 20px;
+  flex: 1;
+  text-align: center;
+}
+.admin-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e8e4d8;
+  line-height: 1;
+}
+.admin-stat-label {
+  font-size: 0.6rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+.admin-stat-value.green { color: #4ade80; }
+.admin-stat-value.yellow { color: #fbbf24; }
+
+/* New Post Button */
+.admin-new-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background: #4ade80;
+  color: #111;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-new-btn:hover { opacity: 0.85; }
+
+/* Posts Table */
+.admin-table-wrap {
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+.admin-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  border-bottom: 1px solid #333;
+  background: #1a1a1a;
+}
+.admin-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #2a2a2a;
+  vertical-align: middle;
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: rgba(74,222,128,0.04); }
+.admin-table-title {
+  font-weight: 600;
+  color: #e8e4d8;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-table-slug { color: #666; font-size: 0.65rem; }
+.admin-table-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.admin-tag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.admin-badge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-block;
+}
+.admin-badge.published { background: rgba(74,222,128,0.15); color: #4ade80; border: 1px solid rgba(74,222,128,0.3); }
+.admin-badge.draft { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+.admin-action-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #aaa;
+  margin-right: 4px;
+}
+.admin-action-btn:hover { border-color: #888; color: #e8e4d8; }
+.admin-action-btn.delete { color: #ff5252; border-color: #ff5252; }
+.admin-action-btn.delete:hover { background: #ff5252; color: #111; }
+.admin-action-btn.toggle { color: #4ade80; border-color: #4ade80; }
+.admin-action-btn.toggle:hover { background: #4ade80; color: #111; }
+
+/* ===== EDITOR ===== */
+.admin-editor {
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.admin-editor-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4ade80;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.admin-form-group { margin-bottom: 14px; }
+.admin-form-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 6px;
+}
+.admin-form-input,
+.admin-form-textarea {
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  padding: 8px 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 2px;
+  color: #e8e4d8;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.admin-form-input:focus,
+.admin-form-textarea:focus { border-color: #4ade80; }
+.admin-form-input::placeholder,
+.admin-form-textarea::placeholder { color: #444; }
+.admin-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.admin-form-textarea.content {
+  min-height: 300px;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+/* Tags */
+.admin-tags-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.admin-tag-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  color: #aaa;
+  cursor: pointer;
+}
+.admin-tag-checkbox input[type="checkbox"] {
+  accent-color: #4ade80;
+  cursor: pointer;
+}
+.admin-tag-checkbox input:checked + span { color: #4ade80; }
+
+/* Publish toggle */
+.admin-publish-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.68rem;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+.admin-toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-toggle.active { background: #4ade80; }
+.admin-toggle::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+.admin-toggle.active::after { transform: translateX(20px); }
+
+/* Editor actions */
+.admin-editor-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+}
+.admin-save-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  background: #4ade80;
+  color: #111;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.admin-save-btn:hover { opacity: 0.85; }
+.admin-save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.admin-cancel-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #444;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.admin-cancel-btn:hover { color: #e8e4d8; border-color: #888; }
+
+/* Preview */
+.admin-preview {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.admin-preview-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-bottom: 12px;
+}
+.admin-preview-body {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+.admin-preview-body h1,
+.admin-preview-body h2 { font-size: 1.1rem; color: #e8e4d8; margin: 16px 0 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+.admin-preview-body h3 { font-size: 0.9rem; color: #e8e4d8; margin: 12px 0 6px; }
+.admin-preview-body p { margin-bottom: 10px; }
+.admin-preview-body ul, .admin-preview-body ol { padding-left: 20px; margin-bottom: 10px; }
+.admin-preview-body li { margin-bottom: 4px; }
+.admin-preview-body code {
+  background: #333;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  color: #4ade80;
+}
+.admin-preview-body pre {
+  background: #111;
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+.admin-preview-body pre code { background: none; padding: 0; }
+.admin-preview-body blockquote {
+  border-left: 3px solid #4ade80;
+  padding-left: 12px;
+  color: #aaa;
+  font-style: italic;
+  margin: 10px 0;
+}
+.admin-preview-body strong { color: #e8e4d8; font-weight: 700; }
+.admin-preview-body a { color: #4ade80; }
+.admin-preview-body hr { border: none; border-top: 1px solid #333; margin: 16px 0; }
+
+/* Markdown hint */
+.admin-md-hint {
+  font-size: 0.58rem;
+  color: #444;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Feedback message */
+.admin-feedback {
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  margin-bottom: 16px;
+}
+.admin-feedback.success {
+  background: rgba(74,222,128,0.1);
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.3);
+}
+.admin-feedback.error {
+  background: rgba(255,82,82,0.1);
+  color: #ff5252;
+  border: 1px solid rgba(255,82,82,0.3);
+}
+
+/* Empty state */
+.admin-empty {
+  text-align: center;
+  padding: 40px;
+  color: #555;
+  font-size: 0.75rem;
+}
+.admin-empty-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .admin-dashboard { padding: 16px; }
+  .admin-stats { flex-direction: column; }
+  .admin-form-row { grid-template-columns: 1fr; }
+  .admin-table { font-size: 0.65rem; }
+  .admin-table th:nth-child(3),
+  .admin-table td:nth-child(3),
+  .admin-table th:nth-child(4),
+  .admin-table td:nth-child(4) { display: none; }
+}

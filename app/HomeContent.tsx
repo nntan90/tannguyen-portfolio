@@ -96,9 +96,18 @@ export default function HomeContent({ posts }: { posts: any[] }) {
     return () => clearTimeout(timer);
   }, []);
 
+  const [lang, setLang] = useState<"EN" | "VI">("EN");
+  const toggleLang = () => setLang(lang === "EN" ? "VI" : "EN");
+
   return (
     <>
-      
+      <style dangerouslySetInnerHTML={{__html: `
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+      `}} />
 
 {/* SIDEBAR */}
 <aside className="sidebar">
@@ -106,7 +115,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
     <img src="/avatarxyz.png" alt="Tan Nguyen" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
   </div>
   <div className="sidebar-name">Tan<br />Nguyen</div>
-  <button className="sidebar-lang" onClick={() => alert("Vietnamese version is coming soon!")}>EN <span>▾</span></button>
+  <button className="sidebar-lang" onClick={toggleLang}>{lang} <span>▾</span></button>
   <nav>
     <ul className="sidebar-nav" id="sidebarNav">
       <li><a href="#" className={activeSection === "home" ? "active" : ""} onClick={(e) => { e.preventDefault(); navigate("home"); }}>Home</a></li>
@@ -128,9 +137,8 @@ export default function HomeContent({ posts }: { posts: any[] }) {
     </a>
   </div>
   <div className="sidebar-badge">
-    <div className="badge-title">VIBE / TESTER</div>
-    <div className="badge-cert">SDET</div>
-    <div className="badge-std">AI AGENT</div>
+    <div className="badge-quote">"Quality is never an accident; it is always the result of intelligent effort."</div>
+    <div className="badge-author">— John Ruskin</div>
   </div>
   <div className="sidebar-footer">
     <a href="#">Privacy Policy</a><br />
