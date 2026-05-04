@@ -15,6 +15,7 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://tester1000kg.vercel.app'),
   title: 'Tan Nguyen - Portfolio',
   description: 'Tan Nguyen — QA/QC Engineer Portfolio',
 }
