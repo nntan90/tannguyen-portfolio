@@ -153,31 +153,72 @@ export default function HomeContent({ posts }: { posts: any[] }) {
   <section className={`page-section ${activeSection === "home" ? "active" : ""}`} id="section-home">
     <div className="hero-section">
       <div className="hero-machine">
-        <div className="retro-mac">
-          <div className="retro-mac-body">
-            <div className="retro-mac-screen-bezel">
-              <div className="retro-mac-screen">
-                <div className="screen-scanlines"></div>
-                <span className="screen-hello">hello.<span className="screen-cursor"></span></span>
+        <div className="ibm-pc">
+          {/* CRT Monitor */}
+          <div className="ibm-monitor">
+            <div className="ibm-monitor-body">
+              <div className="ibm-screen-bezel">
+                <div className="ibm-screen">
+                  <div className="screen-scanlines"></div>
+                  <div className="ibm-screen-content">
+                    <span className="screen-hello">hello.<span className="screen-cursor"></span></span>
+                  </div>
+                  <div className="ibm-color-bars">
+                    <span className="bar bar-red"></span>
+                    <span className="bar bar-green"></span>
+                    <span className="bar bar-blue"></span>
+                    <span className="bar bar-yellow"></span>
+                    <span className="bar bar-cyan"></span>
+                    <span className="bar bar-magenta"></span>
+                  </div>
+                </div>
+              </div>
+              <div className="ibm-monitor-controls">
+                <div className="monitor-knob"></div>
+                <div className="monitor-knob"></div>
               </div>
             </div>
-            <div className="retro-mac-disk"></div>
+            <div className="ibm-monitor-stand"></div>
           </div>
-          <div className="retro-mac-base">
-            <div className="mac-vent"></div>
-            <div className="mac-vent"></div>
-            <div className="mac-vent"></div>
-            <div className="mac-vent"></div>
-            <div className="mac-vent"></div>
-          </div>
-          <div className="mac-peripherals">
-            <div className="retro-keyboard">
-              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
-              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
-              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key spacebar"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
+          {/* Horizontal System Unit */}
+          <div className="ibm-system-unit">
+            <div className="ibm-unit-vents">
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
+              <div className="unit-vent"></div>
             </div>
-            <div className="retro-mouse">
-              <div className="mouse-button"></div>
+            <div className="ibm-unit-drives">
+              <div className="floppy-drive">
+                <div className="floppy-slot"></div>
+                <div className="floppy-latch"></div>
+              </div>
+              <div className="floppy-drive">
+                <div className="floppy-slot"></div>
+                <div className="floppy-latch"></div>
+              </div>
+            </div>
+            <div className="ibm-unit-badge">
+              <div className="power-led"></div>
+            </div>
+          </div>
+          {/* Keyboard */}
+          <div className="ibm-keyboard">
+            <div className="keyboard-row">
+              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+            </div>
+            <div className="keyboard-row">
+              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+            </div>
+            <div className="keyboard-row">
+              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+            </div>
+            <div className="keyboard-row">
+              <div className="key"></div><div className="key"></div><div className="key spacebar"></div><div className="key"></div><div className="key"></div>
             </div>
           </div>
         </div>

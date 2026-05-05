@@ -158,113 +158,191 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* Retro computer illustration */
-.retro-mac {
+/* Retro IBM PC illustration */
+.ibm-pc {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
-.retro-mac-body {
-  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
-  border-radius: 12px 12px 0 0;
-  padding: 24px 24px 80px 24px;
+
+/* === CRT Monitor === */
+.ibm-monitor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.ibm-monitor-body {
+  background: linear-gradient(145deg, #d4d0c8, #c0bcb0);
+  border-radius: 10px;
+  padding: 14px;
   border: 2px solid #9a9690;
   box-shadow: 4px 4px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
-  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
 }
-.retro-mac-screen-bezel {
-  background: #222;
-  border-radius: 12px;
-  padding: 12px;
-  border: 3px solid #1a1a1a;
+.ibm-screen-bezel {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1;
   box-shadow: inset 0 4px 8px rgba(0,0,0,0.6);
 }
-.retro-mac-screen {
-  background: #e8e4d8;
+.ibm-screen {
+  background: #111a2e;
   border-radius: 6px;
+  width: 240px;
   aspect-ratio: 4/3;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   border: 2px solid #000;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 20px rgba(0,80,200,0.15);
 }
-.screen-hello {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 400;
-  color: #1a1a1a;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
-.screen-cursor {
-  display: inline-block;
-  width: 3px; height: 1.2em;
-  background: #1a1a1a;
-  vertical-align: text-bottom;
-  margin-left: 2px;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-.screen-scanlines {
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(
-    0deg, transparent, transparent 2px,
-    rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
-  );
-  pointer-events: none;
-}
-/* Circuit line decorations */
-.circuit-lines {
-  position: absolute; inset: -20px;
-  pointer-events: none; z-index: 0;
-}
-.retro-mac-base {
-  background: linear-gradient(180deg, #c8c4bc, #a39f97);
-  height: 25px;
-  border-radius: 0 0 8px 8px;
-  border: 2px solid #9a9690;
-  border-top: none;
-  margin: 0 6px;
-  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1), 4px 4px 0 #888;
-  display: flex; align-items: flex-end; justify-content: flex-start; gap: 4px; padding-bottom: 4px; padding-left: 15px;
-}
-.mac-vent { width: 20px; height: 3px; background: #888; border-radius: 1px; }
-.retro-mac-disk {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 8px;
-  background: #333;
-  border-radius: 2px;
-  border: 1px solid #111;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
-}
-.mac-peripherals {
+.ibm-screen-content {
+  flex: 1;
   display: flex;
-  gap: 15px;
+  align-items: center;
   justify-content: center;
-  align-items: flex-end;
-  margin-top: 5px;
+  z-index: 1;
 }
-.retro-keyboard {
-  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
+.ibm-color-bars {
+  display: flex;
+  width: 100%;
+  height: 16px;
+  gap: 0;
+  z-index: 1;
+}
+.ibm-color-bars .bar {
+  flex: 1;
+  display: block;
+}
+.bar-red { background: #e74c3c; }
+.bar-green { background: #2ecc71; }
+.bar-blue { background: #3498db; }
+.bar-yellow { background: #f1c40f; }
+.bar-cyan { background: #1abc9c; }
+.bar-magenta { background: #e91e9b; }
+.ibm-monitor-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+.monitor-knob {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #d4d0c8, #8a8680);
+  border: 2px solid #7a7670;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.3), 1px 1px 2px rgba(0,0,0,0.3);
+}
+.ibm-monitor-stand {
+  width: 60%;
+  height: 10px;
+  background: linear-gradient(180deg, #b8b4a8, #9a9690);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 2px 2px 0 #888;
+}
+
+/* === Horizontal System Unit === */
+.ibm-system-unit {
+  background: linear-gradient(145deg, #d4d0c8, #c8c4bc);
   border: 2px solid #9a9690;
-  border-radius: 4px 4px 8px 8px;
-  width: 260px;
-  height: 80px;
+  border-radius: 4px;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  box-shadow: 4px 4px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
+  margin-top: -2px;
+  z-index: 1;
   position: relative;
-  box-shadow: 0 4px 0 #9a9690, 2px 6px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
-  padding: 8px;
+}
+.ibm-unit-vents {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  transform: perspective(400px) rotateX(25deg);
-  transform-origin: bottom;
-  z-index: 10;
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+.unit-vent {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #888 0%, #aaa 50%, #888 100%);
+  border-radius: 1px;
+}
+.ibm-unit-drives {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  padding-right: 12px;
+}
+.floppy-drive {
+  width: 52px;
+  height: 38px;
+  background: linear-gradient(180deg, #bbb8b0, #aaa69e);
+  border: 1px solid #8a8680;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+}
+.floppy-slot {
+  width: 38px;
+  height: 4px;
+  background: #333;
+  border-radius: 1px;
+  border: 1px solid #111;
+}
+.floppy-latch {
+  width: 14px;
+  height: 6px;
+  background: linear-gradient(to bottom, #d4d0c8, #bab6ae);
+  border: 1px solid #9a9690;
+  border-radius: 1px;
+}
+.ibm-unit-badge {
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+.power-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #33ff33;
+  box-shadow: 0 0 4px #33ff33, 0 0 8px rgba(51,255,51,0.3);
+}
+
+/* === IBM Keyboard === */
+.ibm-keyboard {
+  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
+  border: 2px solid #9a9690;
+  border-radius: 4px 4px 6px 6px;
+  width: 105%;
+  height: 72px;
+  position: relative;
+  box-shadow: 0 4px 0 #9a9690, 2px 6px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transform: perspective(500px) rotateX(20deg);
+  transform-origin: top center;
+  margin-top: 8px;
+  z-index: 0;
 }
 .keyboard-row {
   display: flex;
@@ -278,34 +356,40 @@ body {
   border-radius: 3px;
   flex: 1;
   box-shadow: 0 2px 0 #9a9690, inset 0 1px 1px rgba(255,255,255,0.5);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 .key.spacebar {
   flex: 6;
 }
-.retro-mouse {
-  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
-  border: 2px solid #9a9690;
-  border-radius: 12px 12px 16px 16px;
-  width: 45px;
-  height: 65px;
-  position: relative;
-  box-shadow: 3px 3px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center;
+/* Screen styles for IBM (override) */
+.ibm-screen .screen-hello {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: #5dfc5d;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 6px rgba(93,252,93,0.5);
 }
-.mouse-button {
-  background: linear-gradient(to bottom, #e8e4d8, #d4d0c8);
-  border: 1px solid #9a9690;
-  height: 25px;
-  width: 85%;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid #9a9690;
-  margin-top: 4px;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
+.ibm-screen .screen-cursor {
+  display: inline-block;
+  width: 3px; height: 1.2em;
+  background: #5dfc5d;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  box-shadow: 0 0 4px rgba(93,252,93,0.5);
 }
-
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.screen-scanlines {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
 /* Hero text */
 .hero-text { flex: 1; min-width: 0; }
 .hero-greeting {
