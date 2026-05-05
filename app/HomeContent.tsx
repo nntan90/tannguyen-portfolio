@@ -112,7 +112,7 @@ export default function HomeContent({ posts }: { posts: any[] }) {
 {/* SIDEBAR */}
 <aside className="sidebar">
   <div className="sidebar-avatar">
-    <img src="/avatarxyz.png" alt="Tan Nguyen" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
+    <img src="/avatar.png" alt="Tan Nguyen" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
   </div>
   <div className="sidebar-name">Tan<br />Nguyen</div>
   <button className="sidebar-lang" onClick={toggleLang}>{lang} <span>▾</span></button>
