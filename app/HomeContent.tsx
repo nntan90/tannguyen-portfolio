@@ -168,6 +168,16 @@ export default function HomeContent({ posts }: { posts: any[] }) {
             </div>
             <div className="retro-mac-disk"></div>
           </div>
+          <div className="mac-peripherals">
+            <div className="retro-keyboard">
+              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
+              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
+              <div className="keyboard-row"><div className="key"></div><div className="key"></div><div className="key"></div><div className="key spacebar"></div><div className="key"></div><div className="key"></div><div className="key"></div></div>
+            </div>
+            <div className="retro-mouse">
+              <div className="mouse-button"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="hero-text">

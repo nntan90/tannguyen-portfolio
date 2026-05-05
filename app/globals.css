@@ -235,6 +235,59 @@ body {
   margin: 8px auto 0;
   border: 1px solid #888;
 }
+.mac-peripherals {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+.retro-keyboard {
+  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
+  border: 2px solid #9a9690;
+  border-radius: 4px 4px 8px 8px;
+  width: 220px;
+  height: 60px;
+  position: relative;
+  box-shadow: 2px 2px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.keyboard-row {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  flex: 1;
+}
+.key {
+  background: #e8e4d8;
+  border: 1px solid #b0aca4;
+  border-radius: 2px;
+  flex: 1;
+  box-shadow: 1px 1px 0 #9a9690;
+}
+.key.spacebar {
+  flex: 4;
+}
+.retro-mouse {
+  background: linear-gradient(145deg, #d4d0c8, #bab6ae);
+  border: 2px solid #9a9690;
+  border-radius: 8px 8px 12px 12px;
+  width: 35px;
+  height: 50px;
+  position: relative;
+  box-shadow: 2px 2px 0 #888, inset 0 2px 4px rgba(255,255,255,0.4);
+}
+.mouse-button {
+  background: #e8e4d8;
+  border: 1px solid #b0aca4;
+  height: 20px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 2px solid #9a9690;
+}
 
 /* Hero text */
 .hero-text { flex: 1; min-width: 0; }
