@@ -2,6 +2,8 @@
   background-color: #1e1e1e;
   color: #dcddde;
   min-height: 100vh;
+  width: 100%;
+  flex: 1;
   font-family: var(--font-ibm-plex-mono), "Inter", sans-serif;
 }
 
