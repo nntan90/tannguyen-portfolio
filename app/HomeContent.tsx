@@ -206,19 +206,28 @@ export default function HomeContent({ posts }: { posts: any[] }) {
               <div className="power-led"></div>
             </div>
           </div>
-          {/* Keyboard */}
-          <div className="ibm-keyboard">
-            <div className="keyboard-row">
-              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+          {/* Keyboard & Mouse */}
+          <div className="ibm-peripherals">
+            <div className="ibm-keyboard">
+              <div className="keyboard-row">
+                <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+              </div>
+              <div className="keyboard-row">
+                <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+              </div>
+              <div className="keyboard-row">
+                <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
+              </div>
+              <div className="keyboard-row">
+                <div className="key"></div><div className="key"></div><div className="key spacebar"></div><div className="key"></div><div className="key"></div>
+              </div>
             </div>
-            <div className="keyboard-row">
-              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
-            </div>
-            <div className="keyboard-row">
-              <div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div><div className="key"></div>
-            </div>
-            <div className="keyboard-row">
-              <div className="key"></div><div className="key"></div><div className="key spacebar"></div><div className="key"></div><div className="key"></div>
+            <div className="ibm-mouse">
+              <div className="mouse-cable"></div>
+              <div className="mouse-body">
+                <div className="mouse-button-left"></div>
+                <div className="mouse-button-right"></div>
+              </div>
             </div>
           </div>
         </div>
