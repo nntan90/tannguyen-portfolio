@@ -161,12 +161,14 @@ export default function HomeContent({ posts }: { posts: any[] }) {
                 <span className="screen-hello">hello.<span className="screen-cursor"></span></span>
               </div>
             </div>
-            <div className="retro-mac-base">
-              <div className="mac-vent"></div>
-              <div className="mac-vent"></div>
-              <div className="mac-vent"></div>
-            </div>
             <div className="retro-mac-disk"></div>
+          </div>
+          <div className="retro-mac-base">
+            <div className="mac-vent"></div>
+            <div className="mac-vent"></div>
+            <div className="mac-vent"></div>
+            <div className="mac-vent"></div>
+            <div className="mac-vent"></div>
           </div>
           <div className="mac-peripherals">
             <div className="retro-keyboard">
